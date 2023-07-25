@@ -1,12 +1,12 @@
 {
-  "name": "JATE",
+  "name": "justanothertexteditor",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start:dev": "concurrently \"cd client && npm run build\" \"cd server && npm run server\" ",
+    "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
     "start": "npm run build && cd server && node server.js",
-    "server": "cd server server.js --ignore client",
+    "server": "d server nodemon server.js --ignore client",
     "build": "cd client && npm run build",
     "install": "cd server && npm i && cd ../client && npm i",
     "client": "cd client && npm start"
@@ -19,6 +19,7 @@
     "if-env": "^1.0.4"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
     "concurrently": "^5.2.0",
     "nodemon": "^2.0.4"
   }
